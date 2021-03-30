@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-
+import ChartContainer from '../containers/ChartContainer';
+import ChartInfoContainer from '../containers/ChartInfoContainer';
+import Header from './Header';
+import Footer from './Footer'
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +11,12 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello world</h1>
+      <div id="view">
+        <Header />
+        <div id='chart'><ChartContainer /></div>
+        <ChartInfoContainer />
+      <Footer />
+      </div>
     )
   }
 }
