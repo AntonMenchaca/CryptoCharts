@@ -4,7 +4,11 @@ import rootReducer from '../reducers/rootReducer.js';
 
 var initialState = {
   currentCoin: 'Bitcoin',
-  currentData: {}
+  currentData: {
+    price: [],
+    volume: [],
+    market_caps: []
+  }
 };
 
 const store = createStore (

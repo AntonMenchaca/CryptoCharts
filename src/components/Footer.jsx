@@ -10,7 +10,7 @@ let Footer = () => {
 </div>
 
     <div>
-    <p>menchacanton@gmail.com</p>
+    <a id="gitURL" href="https://github.com/amenchaca100/CryptoCharts">Source Code</a>
     </div>
 
 

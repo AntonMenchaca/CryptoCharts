@@ -1,3 +1,8 @@
+import thunk from 'redux-thunk';
+import axios from 'axios';
+
+
+
 var getData = (data) => {
   return {
   type: 'GET_DATA',

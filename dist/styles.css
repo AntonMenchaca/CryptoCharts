@@ -16,7 +16,7 @@ even lighter blue: #62B1D0
   position: relative;
   width: 100%;
   height: 100vh;
-  grid-template-columns: "1fr 1fr";
+  grid-template-columns: "2fr 1fr";
   grid-template-rows: "1fr 10fr 1fr";
   column-gap: 3px;
   row-gap: 3px;
@@ -47,6 +47,7 @@ even lighter blue: #62B1D0
   height: 90vh;
   grid-area: ci;
 }
+
 
 #footer {
   height: 5vh;
@@ -89,4 +90,11 @@ even lighter blue: #62B1D0
   height: 60px;
   width: 100%;
   object-fit: contain;
+}
+
+
+
+#gitURL {
+  text-decoration: none;
+  color: black;
 }
