@@ -14,12 +14,6 @@ var initialState = {
   currentEthPrice: {},
   currentLiteCoinPrice: {},
   currentRipplePrice: {},
-  changeGraphType: [],
-  lowestPrice: 0,
-  highestPrice: 0,
-  highestDay: 0,
-  lowestDay: 0,
-  avgPrice: 0
 };
 
 const store = createStore (
@@ -28,5 +22,5 @@ const store = createStore (
   applyMiddleware(thunk)
 );
 
-console.log(store.getState());
+
 export default store;

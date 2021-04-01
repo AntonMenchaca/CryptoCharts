@@ -20,7 +20,6 @@ var handleGraphSelect = (query) => {
       }
       dispatch(getData(data));
       dispatch(changeCoin(query.name));
-      console.log('this is the data from the action', data);
       return data;
     }).catch((err) => {
       console.log(err);

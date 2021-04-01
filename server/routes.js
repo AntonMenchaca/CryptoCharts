@@ -2,7 +2,6 @@ const router = require('express').Router();
 const coinAPI = require('./helper/apiCoin');
 const apiControllers = require('./helper/controllers');
 var moment = require('moment');
-const news = require('./helper/coinNews');
 
 
 var func = () => {
