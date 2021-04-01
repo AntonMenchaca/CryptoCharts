@@ -1,7 +1,6 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-// i need to pass the lowest and highest as state
 const Chart = ({coinName, currentData, chooseGraph}) => {
 
 
