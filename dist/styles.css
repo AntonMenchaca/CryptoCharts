@@ -2,6 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+h1 {
+  font-size: 3rem;
 }
 
 /*
@@ -30,6 +34,10 @@ even lighter blue: #62B1D0
   background-color: #0776A0;
   height: 15vh;
   grid-area: header;
+  color: rgb(133, 231, 133);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
 }
 
@@ -64,18 +72,21 @@ even lighter blue: #62B1D0
 .logo-header {
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 200px;
   justify-content: center;
 }
 .logo-header img {
   object-fit: contain;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .prices-header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.prices-header div {
+  margin-right: 1rem;
 }
 
 .logo {
@@ -97,4 +108,58 @@ even lighter blue: #62B1D0
 #gitURL {
   text-decoration: none;
   color: black;
+}
+
+#coinData {
+  background-color: #024C68;
+  height: 30%;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid whitesmoke;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  margin-left: .5rem;
+  margin-bottom: .5rem;
+}
+
+  button {
+  width: 70px;
+
+
+}
+
+
+#coinNews {
+  background-color: #024C68;
+  height: 60%;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid whitesmoke;
+  overflow: scroll;
+}
+
+#innerChart {
+  background-color: #0776A0;
+  margin-top: 1rem;
+}
+
+.newsContainer {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  overflow: scroll;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.newsImage {
+  object-fit: contain;
 }

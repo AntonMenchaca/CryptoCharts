@@ -7,8 +7,19 @@ var initialState = {
   currentData: {
     price: [],
     volume: [],
-    market_caps: []
-  }
+    market_caps: [],
+  },
+  news: [],
+  currentBitcoinPrice: {},
+  currentEthPrice: {},
+  currentLiteCoinPrice: {},
+  currentRipplePrice: {},
+  changeGraphType: [],
+  lowestPrice: 0,
+  highestPrice: 0,
+  highestDay: 0,
+  lowestDay: 0,
+  avgPrice: 0
 };
 
 const store = createStore (

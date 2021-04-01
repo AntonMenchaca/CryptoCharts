@@ -2,6 +2,7 @@ const router = require('express').Router();
 const coinAPI = require('./helper/apiCoin');
 const apiControllers = require('./helper/controllers');
 var moment = require('moment');
+const news = require('./helper/coinNews');
 
 
 var func = () => {
@@ -12,30 +13,33 @@ var func = () => {
   })
 }
 
+router.get('/bigcoin', (req, res) => {
+  return apiControllers.getBigCoinData().then(({data}) => {
+    res.send(data);
+  })
+})
+
 
 router.get('/coinData', (req, res) => {
   return apiControllers.getCoinData({name: req.query.name, from: req.query.from, to: req.query.to}).then(({data}) => {
-    console.log(data.prices);
     var graphData = {
       price: [],
       volume: [],
-      market_caps: []
+      market_caps: [],
     };
     data.prices.map((data) => {
       var realTime = moment(data[0]);
       var newTime = realTime.format("M/D/YYYY");
-      graphData.price.push([newTime, data[1].toFixed(2)])
+      graphData.price.push([newTime, data[1].toFixed(4)])
     })
     data.total_volumes.map((data) => {
-      graphData.volume.push(data[1].toFixed(2))
+      graphData.volume.push(data[1].toFixed(4))
     })
 
     data.market_caps.map((data) => {
-      graphData.market_caps.push(data[1].toFixed(2))
+      graphData.market_caps.push(data[1].toFixed(4))
     })
-
-    console.log(graphData);
-   res.send(graphData);
+    res.send(graphData);
   })
 })
 

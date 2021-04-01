@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import ChartData from './ChartData';
+import { Button } from '@material-ui/core';
+import NewsCarouselContainer from '../containers/NewsCarousel';
 
 let ChartInfo = ({updateGraph, currentData}) => {
 // lets pull up current news on a crypto currency to be put on the second panel
@@ -7,6 +10,7 @@ const [state, setState] = useState({
   from: "",
   to: ""
   })
+
 
   function handleChange(evt) {
     const value = evt.target.value;
@@ -60,9 +64,14 @@ const [state, setState] = useState({
         />
       </label>
     </form>
-    <button type="submit" form="searchCoin" value="Submit">Submit</button>
+    <Button type="submit" form="searchCoin" value="Submit" variant="contained" color="primary">Submit</Button>
+    <div>
+      {currentData ? <ChartData /> : <h1>none</h1>}
     </div>
-    <div id="CoinNews"></div>
+    </div>
+    <div id="coinNews">
+      <NewsCarouselContainer />
+    </div>
     </div>
   )
 }

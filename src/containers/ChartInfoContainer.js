@@ -1,6 +1,6 @@
 import { connect, dispatch } from 'react-redux';
 import ChartInfo from '../components/ChartInfo';
-import changeCoin from '../actions/Chart/ChangeCoin';
+import changeCoin from '../actions/Chart/changeCoin';
 import handleGraphSelect from '../actions/handleGraphSelect';
 
 var mapStoreToProps = (state) => ({

@@ -4,6 +4,7 @@ const SRC_DIR = path.resolve(__dirname, "src");
 const DIST_DIR = path.resolve(__dirname, "dist");
 
 module.exports = {
+
   entry: ['react-hot-loader/patch', `${SRC_DIR}/index.jsx`],
   output: {
     filename: "bundle.js",
