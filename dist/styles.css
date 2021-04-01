@@ -117,22 +117,39 @@ even lighter blue: #62B1D0
   margin: 1rem;
   border: 1px solid whitesmoke;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: whitesmoke;
+  justify-content: space-around;
+  align-items: center;
 }
+#currentPriceInfo {
+  background-color: #62B1D0;
+  border: 1px solid whitesmoke;
+  padding: 1rem;
+}
+
+#currentPriceInfo p {
+  margin-bottom: 1rem;
+}
+
+#searchCoin {
+  margin-right: 1rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
 }
+
 form input {
-  margin-left: .5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
   button {
   width: 70px;
-
-
 }
 
 
@@ -162,4 +179,45 @@ form input {
 
 .newsImage {
   object-fit: contain;
+}
+
+
+@media (min-width: 0px) and (max-width:768px) {
+  .logo-header img {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+  }
+  #header {
+    font-size: .8rem;
+    width: 100vw;
+    grid-area: header;
+
+  }
+  #view {
+    display: grid;
+    position: relative;
+    width: 100%;
+
+    grid-template-columns: "1fr";
+    grid-template-rows: "1fr 1fr 1fr 1fr";
+    row-gap: 3px;
+    grid-template-areas:
+    "header"
+    "c"
+    "ci"
+    "footer"
+
+  }
+  #chart {
+    width: 100vw;
+    height: 70vh;
+  }
+
+  #chartInfo {
+    background-color: #62B1D0;
+    width: 100vw;
+    height: 100vh;
+    grid-area: ci;
+  }
 }

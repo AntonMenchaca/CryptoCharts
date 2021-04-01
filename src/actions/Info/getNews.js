@@ -7,6 +7,7 @@ import currentBitcoin from './currentBitcoin';
 import currentLiteCoin from './currentLiteCoin';
 import currentRipple from './currentRipple';
 import currentEthereum from './currentEthereum';
+
 var getNews = () => {
   return (dispatch) => {
     axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${TOKEN}`)

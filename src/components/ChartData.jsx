@@ -2,43 +2,14 @@ import React, {Component, useEffect} from 'react';
 
 let ChartData = ({currentData}) => {
 
-  useEffect(() => {
-    getCoinData(currentData)
-  }, [currentData]);
-
-  var lowestPrice;
-  var highestPrice;
-  var lowestDay;
-  var highestDay;
-  var avgPrice;
-
-  let getCoinData = (data) => {
-    if (data) {
-    lowestPrice= data?.price[0][1];
-    console.log(lowestPrice)
-    highestPrice= data?.price[0][1];
-    console.log(highestPrice)
-    data?.price?.map((data, i) => {
-      if (lowestPrice > data[1]) {
-        lowestPrice = data[1];
-        lowestDay = i;
-      }
-      if (highestPrice < data[1]) {
-        highestPrice = data[1];
-        highestDay = i;
-      }
-      avgPrice += data[1];
-    });
-   avgPrice = avgPrice/data?.price?.length - 1;
-   highestDay = data?.price[highestDay][0];
-   lowestDay = data?.price[lowestDay][0];
-    }
-
-  }
 
   return (
-    <div>
-      <h1>{highestPrice}</h1>
+    <div id="currentPriceInfo">
+      <p>Highest Value: ${currentData?.highestPrice?.toFixed(4)}</p>
+      <p>Lowest Value: ${currentData?.lowestPrice?.toFixed(4)}</p>
+      <p>Highest Day: {currentData?.highestDay}</p>
+      <p>Lowest Day: {currentData?.lowestDay}</p>
+      <p>Average Value: ${currentData?.avgPrice?.toFixed(4)}</p>
     </div>
   )
 }
