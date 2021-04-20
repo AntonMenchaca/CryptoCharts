@@ -15,7 +15,7 @@ var func = () => {
 router.get('/bigcoin', (req, res) => {
   return apiControllers.getBigCoinData().then(({data}) => {
     res.send(data);
-  })
+  }).catch((err) => {console.log(err)})
 })
 
 
@@ -65,6 +65,8 @@ router.get('/coinData', (req, res) => {
       graphData.market_caps.push(data[1].toFixed(4))
     })
     res.send(graphData);
+  }).catch((err) => {
+    console.log(err)
   })
 })
 
