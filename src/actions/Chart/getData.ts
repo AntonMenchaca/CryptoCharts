@@ -1,6 +1,3 @@
-import thunk from 'redux-thunk';
-import axios from 'axios';
-
 
 
 var getData = (data) => {

@@ -5,10 +5,6 @@ import HeaderContainer from '../containers/HeaderContainer';
 import Footer from './Footer';
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div id="view">

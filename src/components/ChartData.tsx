@@ -1,6 +1,16 @@
 import React, {Component, useEffect} from 'react';
 
-let ChartData = ({currentData}) => {
+interface CoinData {
+  currentData: {
+    highestPrice: number;
+    lowestPrice: number;
+    highestDay: number;
+    lowestDay: number;
+    avgPrice: number;
+  }
+}
+
+let ChartData = ({currentData}: CoinData)  => {
 
 
   return (

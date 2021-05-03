@@ -1,20 +1,25 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-const Chart = ({coinName, currentData, chooseGraph}) => {
+interface CoinProps {
+  coinName: string;
+  currentData: any;
+}
+
+const Chart = ({coinName, currentData}: CoinProps) => {
 
 
-  var pricePerDay = currentData?.price.map((data, i) => {
+  var pricePerDay: number[] = currentData?.price.map((data: number[]) => {
     return data[1]
   });
 
-  var day = currentData?.price.map((data) => {
+  var day = currentData?.price.map((data: number[]) => {
     return data[0]
   })
 
 
     return (
-      <Line id="innerChart"
+      <Line
       data={{ labels:  day || [0],
           fontcolor: '#fff',
           datasets: [{
