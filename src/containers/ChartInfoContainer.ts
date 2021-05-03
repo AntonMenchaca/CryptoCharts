@@ -1,15 +1,17 @@
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import ChartInfo from '../components/ChartInfo';
 import changeCoin from '../actions/Chart/changeCoin';
 import handleGraphSelect from '../actions/handleGraphSelect';
+import State from "../interface/State";
 
-var mapStoreToProps = (state) => ({
+
+var mapStoreToProps = (state: State) => ({
   coinName: state.currentCoin,
   currentData: state.currentData
 });
 
 var mapDispatchToProps = (dispatch) => ({
-  changeCoinName: (newCoin) => (dispatch(changeCoin(newCoin))),
+  changeCoinName: (newCoin: string) => (dispatch(changeCoin(newCoin))),
   updateGraph: (newGraphData) => (dispatch(handleGraphSelect(newGraphData)))
 
 })
@@ -17,3 +19,4 @@ var mapDispatchToProps = (dispatch) => ({
 var ChartInfoContainer = connect(mapStoreToProps, mapDispatchToProps)(ChartInfo);
 
 export default ChartInfoContainer;
+

@@ -1,6 +1,6 @@
 import React from 'react';
 
-let Footer = () => {
+let Footer: React.FC = () => {
 
   return (
     <div id='footer'>

@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import {Provider} from 'react-redux';
+<<<<<<< HEAD:src/index.jsx
 import {store, persistor} from './store/store.js';
 import axios from 'axios';
+=======
+import store from './store/store.js';
+>>>>>>> create type files:src/index.tsx
 import handleGraphSelect from './actions/handleGraphSelect';
 import moment from 'moment'
 import { PersistGate } from 'redux-persist/integration/react';

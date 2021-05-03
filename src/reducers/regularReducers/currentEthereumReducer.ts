@@ -1,6 +1,6 @@
-import Redux from 'redux';
+import { Reducer } from 'redux';
 
-var currentEthereumReducer = (state={}, action) => {
+var currentEthereumReducer: Reducer = (state={}, action) => {
   if (action.type === "UPDATE_ETHEREUM") {
     return action.payload;
   } else {

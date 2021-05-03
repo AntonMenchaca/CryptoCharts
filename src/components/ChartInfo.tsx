@@ -3,7 +3,18 @@ import ChartDataContainer from '../containers/ChartDataContainer';
 import { Button } from '@material-ui/core';
 import NewsCarouselContainer from '../containers/NewsCarousel';
 
-let ChartInfo = ({updateGraph, currentData}) => {
+interface PriceRange {
+  name: string;
+  to: string;
+  from: string;
+}
+
+interface Graph {
+   updateGraph: (priceObj: PriceRange) => void
+   currentData: any
+}
+
+let ChartInfo = ({updateGraph, currentData}: Graph) => {
 const [state, setState] = useState({
   coinName: "",
   from: "",
@@ -11,7 +22,7 @@ const [state, setState] = useState({
   })
 
 
-  function handleChange(evt) {
+  function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     const value = evt.target.value;
     setState({
       ...state,
@@ -20,7 +31,7 @@ const [state, setState] = useState({
     console.log(state.from)
   }
 
-  function handleSubmit(evt) {
+  function handleSubmit(evt: React.ChangeEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     return updateGraph({name: state.coinName.toLowerCase(), from: state.from, to:state.to});
   }
@@ -35,7 +46,7 @@ const [state, setState] = useState({
           type="text"
           name="coinName"
           value={state.coinName}
-          onChange={handleChange}
+          onChange={handleSubmit}
           placeholder="Bitcoin"
           required={true}
         />
