@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var currentBitcoinReducer: Reducer = (state={}, action) => {
+var currentBitcoinReducer = (state={}, action: AnyAction) => {
   if (action.type === "UPDATE_BITCOIN") {
     return action.payload;
   } else {

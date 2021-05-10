@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@material-ui/core'
 
-interface News {
-    title: string;
-    news_url: string;
-    image_url: string;
-}
+// interface News {
+//     title: string;
+//     news_url: string;
+//     image_url: string;
+// }
 
-let NewsCarousel = ({allNews}: {allNews: any[] | undefined}) => {
+let NewsCarousel = ({allNews}) => {
 
     return (
         <Carousel>
@@ -19,7 +19,7 @@ let NewsCarousel = ({allNews}: {allNews: any[] | undefined}) => {
     )
 }
 
-function Item({news}: News)
+function Item({news})
 {
     return (
         <Paper>

@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var changeGraphReducer: Reducer = (state= [], action) => {
+var changeGraphReducer = (state= [], action: AnyAction) => {
   if (action.type === "CHANGE_GRAPH") {
     return action.payload;
   } else {

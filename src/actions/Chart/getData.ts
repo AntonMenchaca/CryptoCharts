@@ -1,6 +1,6 @@
 
 
-var getData = (data) => {
+var getData = <T>(data: T) => {
   return {
   type: 'GET_DATA',
   payload: data

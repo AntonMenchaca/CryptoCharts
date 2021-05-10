@@ -1,6 +1,25 @@
 import React from 'react';
 
-var Header = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice}) => {
+interface props {
+  ethPrice:{
+    usd: number;
+    usd_24h_change: number;
+  }
+  bitcoinPrice:{
+    usd: number;
+    usd_24h_change: number;
+  }
+  litecoinPrice:{
+    usd: number;
+    usd_24h_change: number;
+  }
+  ripplePrice:{
+    usd: number;
+    usd_24h_change: number;
+  }
+}
+
+var Header: React.FC<props> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice}) => {
 
   return (
     <div id="header">

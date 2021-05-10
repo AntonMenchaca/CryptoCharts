@@ -1,19 +1,26 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
+
+type numList = number[]
+
 interface CoinProps {
   coinName: string;
-  currentData: any;
+  currentData: {
+    volume: numList[]
+    market_caps: numList[]
+    price: numList[]
+  };
 }
 
-const Chart = ({coinName, currentData}: CoinProps) => {
+const Chart: React.FC<CoinProps> = ({coinName, currentData}) => {
 
 
-  var pricePerDay: number[] = currentData?.price.map((data: number[]) => {
+  var pricePerDay = currentData?.price.map((data) => {
     return data[1]
   });
 
-  var day = currentData?.price.map((data: number[]) => {
+  var day = currentData?.price.map((data) => {
     return data[0]
   })
 

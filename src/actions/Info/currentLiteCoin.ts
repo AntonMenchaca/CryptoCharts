@@ -1,4 +1,4 @@
-var currentLiteCoin = (currentPrice) => {
+var currentLiteCoin = <T>(currentPrice: T) => {
   return {
   type: "UPDATE_LITECOIN",
   payload: currentPrice

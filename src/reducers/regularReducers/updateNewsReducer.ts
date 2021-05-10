@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var updateNewsReducer: Reducer = (state=[], action) => {
+var updateNewsReducer = (state=[], action: AnyAction) => {
   if (action.type === "UPDATE_NEWS") {
     return action.payload;
   } else {

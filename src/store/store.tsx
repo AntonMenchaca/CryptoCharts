@@ -1,8 +1,25 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/rootReducer.js';
+import currentBitcoin from '../actions/Info/currentBitcoin.js';
 
-var initialState = {
+type NumbersArr = number[];
+
+export interface State  {
+  currentCoin: string;
+  currentData: {
+    price: NumbersArr[];
+    volume: NumbersArr[];
+    market_caps: NumbersArr[];
+  };
+  news: [];
+  currentBitcoinPrice: Object;
+  currentEthPrice: Object;
+  currentLiteCoinPrice: Object;
+  currentRipplePrice: Object;
+}
+
+var initialState: State = {
   currentCoin: 'Bitcoin',
   currentData: {
     price: [],
@@ -22,5 +39,5 @@ const store = createStore (
   applyMiddleware(thunk)
 );
 
-
+export type RootState = ReturnType<typeof store.getState>
 export default store;

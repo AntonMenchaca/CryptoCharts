@@ -11,10 +11,14 @@ interface PriceRange {
 
 interface Graph {
    updateGraph: (priceObj: PriceRange) => void
-   currentData: any
+   currentData: any,
+   allNews: []
 }
+// : Graph
+// evt: React.ChangeEvent<HTMLInputElement>
+// } : React.ChangeEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>
 
-let ChartInfo = ({updateGraph, currentData}: Graph) => {
+let ChartInfo: React.FC<Graph> = ({updateGraph, currentData, allNews}) => {
 const [state, setState] = useState({
   coinName: "",
   from: "",
@@ -77,11 +81,11 @@ const [state, setState] = useState({
     </form>
 
     <div>
-      {currentData ? <ChartDataContainer /> : <h1>none</h1>}
+      {currentData ? <ChartDataContainer currentData={currentData}/> : <h1>none</h1>}
     </div>
     </div>
     <div id="coinNews">
-      <NewsCarouselContainer />
+      <NewsCarouselContainer allNews={allNews} />
     </div>
     </div>
   )

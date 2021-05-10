@@ -1,4 +1,4 @@
-var currentRipple = (currentPrice) => {
+var currentRipple = <T>(currentPrice: T) => {
   return {
   type: "UPDATE_RIPPLE",
   payload: currentPrice

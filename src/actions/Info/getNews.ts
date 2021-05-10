@@ -7,9 +7,10 @@ import currentBitcoin from './currentBitcoin';
 import currentLiteCoin from './currentLiteCoin';
 import currentRipple from './currentRipple';
 import currentEthereum from './currentEthereum';
+import {Dispatch} from 'redux';
 
 var getNews = () => {
-  return (dispatch) => {
+  return (dispatch: Dispatch) => {
     axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${TOKEN}`)
     .then(({data}) => {
       dispatch(updateNews(data));
