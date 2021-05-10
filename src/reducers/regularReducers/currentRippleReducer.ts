@@ -1,6 +1,6 @@
-import Redux from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var currentRippleReducer = (state={}, action) => {
+var currentRippleReducer = (state={}, action: AnyAction) => {
   if (action.type === "UPDATE_RIPPLE") {
     return action.payload;
   } else {

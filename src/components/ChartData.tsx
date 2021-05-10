@@ -10,7 +10,7 @@ interface CoinData {
   }
 }
 
-let ChartData = ({currentData}: CoinData)  => {
+let ChartData: React.FC<CoinData> = ({currentData})  => {
 
 
   return (

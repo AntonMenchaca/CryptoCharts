@@ -1,8 +1,8 @@
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import ChartData from '../components/ChartData';
+import {State} from '../store/store';
 
-
-var mapStoreToProps = (state) => ({
+var mapStoreToProps = (state: State) => ({
   currentData: state.currentData
 });
 

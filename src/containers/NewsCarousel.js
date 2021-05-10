@@ -3,7 +3,7 @@ import NewsCarousel from '../components/NewsViewer';
 import State from "../interface/State"
 
 
-var mapStoreToProps = (state: State) => ({
+var mapStoreToProps = (state) => ({
   allNews: state.news
 });
 

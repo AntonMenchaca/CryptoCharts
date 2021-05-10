@@ -4,6 +4,25 @@ import {persistStore, persistReducer} from 'redux-persist';
 import rootReducer from '../reducers/rootReducer.js';
 import storage from 'redux-persist/lib/storage';
 var initialState = {
+import currentBitcoin from '../actions/Info/currentBitcoin.js';
+
+type NumbersArr = number[];
+
+export interface State  {
+  currentCoin: string;
+  currentData: {
+    price: NumbersArr[];
+    volume: NumbersArr[];
+    market_caps: NumbersArr[];
+  };
+  news: [];
+  currentBitcoinPrice: Object;
+  currentEthPrice: Object;
+  currentLiteCoinPrice: Object;
+  currentRipplePrice: Object;
+}
+
+var initialState: State = {
   currentCoin: 'Bitcoin',
   currentData: {
     price: [],
@@ -32,3 +51,5 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const persistor = persistStore(store);
 
 
+export type RootState = ReturnType<typeof store.getState>
+export default store;

@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var getDataReducer: Reducer = (state={}, action) => {
+var getDataReducer = (state={}, action: AnyAction) => {
   if (action.type === "GET_DATA") {
     return action.payload;
   } else {

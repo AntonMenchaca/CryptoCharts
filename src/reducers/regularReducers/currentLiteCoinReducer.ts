@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
+import { Reducer, AnyAction } from 'redux';
 
-var currentLiteCoinReducer: Reducer = (state={}, action) => {
+var currentLiteCoinReducer = (state={}, action: AnyAction) => {
   if (action.type === "UPDATE_LITECOIN") {
     return action.payload;
   } else {

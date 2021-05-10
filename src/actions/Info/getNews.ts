@@ -11,6 +11,10 @@ import TOKEN from '../../../config';
 var getNews = () => {
   return (dispatch) => {
 
+import {Dispatch} from 'redux';
+
+var getNews = () => {
+  return (dispatch: Dispatch) => {
     axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${TOKEN}`)
     .then(({data}) => {
       dispatch(updateNews(data));
