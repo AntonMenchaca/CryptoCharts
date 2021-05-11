@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-// import State from "../interface/State";
+import {State} from '../store/store';
 
-var mapStoreToProps = (state) => ({
+var mapStoreToProps = (state: State) => ({
   ethPrice: state.currentEthPrice,
   bitcoinPrice: state.currentBitcoinPrice,
   litecoinPrice: state.currentLiteCoinPrice,

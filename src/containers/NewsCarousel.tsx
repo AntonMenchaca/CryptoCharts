@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import NewsCarousel from '../components/NewsViewer';
-import State from "../interface/State"
+import {State} from '../store/store';
 
-
-var mapStoreToProps = (state) => ({
+var mapStoreToProps = (state: State) => ({
   allNews: state.news
 });
 
