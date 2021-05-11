@@ -1,25 +1,23 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 
-// interface News {
-//     title: string;
-//     news_url: string;
-//     image_url: string;
-// }
 
-let NewsCarousel = ({allNews}) => {
+
+
+
+let NewsCarousel: React.FC<T> = ({allNews}): T => {
 
     return (
         <Carousel>
             {
-                allNews?.map((news, i) => <Item key={i} news={news} /> )
+                allNews?.map((news: number[], i: number) => <Item key={i} allNews={news} /> )
             }
         </Carousel>
     )
 }
 
-function Item({news})
+let Item:React.FC<AllNews> = ({news}) =>
 {
     return (
         <Paper>

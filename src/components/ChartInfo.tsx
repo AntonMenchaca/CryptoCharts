@@ -85,7 +85,7 @@ const [state, setState] = useState({
     </div>
     </div>
     <div id="coinNews">
-      <NewsCarouselContainer allNews={allNews} />
+      <NewsCarouselContainer />
     </div>
     </div>
   )

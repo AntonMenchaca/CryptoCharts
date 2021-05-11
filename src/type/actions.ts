@@ -1,6 +1,6 @@
 
-export default interface Action<T> {
+export default interface Action {
     type: string;
-    payload: T
+    payload: any;
 }
 

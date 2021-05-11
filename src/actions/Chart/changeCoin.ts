@@ -1,8 +1,8 @@
 
-var changeCoin = <T>(coinName: T) => {
+var changeCoin = <T>(newCoin: T) => {
   return {
-  type: 'CHANGE_NAME',
-  payload: coinName
+  type: "CHANGE_NAME",
+  payload: newCoin
 }}
 
 export default changeCoin;
