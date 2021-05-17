@@ -5,7 +5,7 @@ const DIST_DIR = path.resolve(__dirname, "dist");
 
 module.exports = {
 
-  entry: ['react-hot-loader/patch', `${SRC_DIR}/index.tsx`],
+  entry: ['react-hot-loader/patch', `${SRC_DIR}/index`],
   output: {
     filename: "bundle.js",
     path: DIST_DIR,
@@ -18,9 +18,9 @@ module.exports = {
         exclude: [/node_modules/]
       },
       {
-        test: /\.ts(x)?$/,
+        test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/]
       }
     ]
   },
