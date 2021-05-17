@@ -19,7 +19,8 @@ interface props {
   }
 }
 
-var Header: React.FC<props> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice}) => {
+
+var Header: React.FC<props | undefined> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice}) => {
 
   return (
     <div id="header">
@@ -55,3 +56,4 @@ var Header: React.FC<props> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePri
 }
 
 export default Header;
+

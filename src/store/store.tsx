@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from '../reducers/rootReducer.js';
-import currentBitcoin from '../actions/Info/currentBitcoin.js';
+import rootReducer from '../reducers/rootReducer';
+
 
 type NumbersArr = number[];
 

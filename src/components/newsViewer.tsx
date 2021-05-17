@@ -1,38 +1,32 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper } from '@material-ui/core'
+import Item from './ItemNews'
+import ItemNews from '../type/ItemNews';
 
 
+// type individualNews = {
+//     key: number;
+//     allNews: ItemNews;
+// }
+type newsArr = any[] | undefined;
 
+// interface news {
+//     allNews: individualNews[]
+// }
+// : React.FC<news> : number
 
-
-let NewsCarousel: React.FC<T> = ({allNews}): T => {
+let NewsCarousel = ({allNews}: {allNews: newsArr}) => {
 
     return (
         <Carousel>
             {
-                allNews?.map((news: number[], i: number) => <Item key={i} allNews={news} /> )
+                allNews?.map((news, i) => <Item key={i} allNews={news} /> )
             }
         </Carousel>
     )
 }
 
-let Item:React.FC<AllNews> = ({news}) =>
-{
-    return (
-        <Paper>
-        <div className="newsContainer">
-        <h2>{news.title}</h2>
-            <div className="newsImageContainer">
-            <a className="newsImage" href={news.news_url}> <img src={news.image_url}></img>
-            </a>
-            </div>
-
-            <p>{news.text}</p>
-        </div>
-
-        </Paper>
-    )
-}
 
 export default NewsCarousel;
+
+//what are you going to do when opening a new codebase
