@@ -2,11 +2,11 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import getData from './Chart/getData';
 import changeCoin from './Chart/changeCoin';
-import store from '../store/store';
+import {store} from '../store/store';
 import getNews from './Info/getNews';
 
 var handleGraphSelect = (query) => {
-
+console.log(store)
   return (dispatch) => {
     var isNewsLoaded = store.getState().news;
     return axios.get(`/coinData`, { params: {
