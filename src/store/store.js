@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import {persistStore, persistReducer} from 'redux-persist';
 import rootReducer from '../reducers/rootReducer.js';
-
+import storage from 'redux-persist/lib/storage';
 var initialState = {
   currentCoin: 'Bitcoin',
   currentData: {
@@ -16,11 +17,29 @@ var initialState = {
   currentRipplePrice: {},
 };
 
-const store = createStore (
-  rootReducer,
-  initialState,
-  applyMiddleware(thunk)
-);
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: []
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 
-export default store;
+  export const store = createStore(persistedReducer,   initialState,
+    applyMiddleware(thunk));
+
+export const persistor = persistStore(store);
+
+
+
+
+
+// const store = createStore (
+//   rootReducer,
+//   initialState,
+//   applyMiddleware(thunk)
+// );
+
+
+// export default store;

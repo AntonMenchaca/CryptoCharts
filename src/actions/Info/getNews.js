@@ -1,15 +1,16 @@
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import TOKEN from '../../../config.js';
-import store from '../../store/store';
 import updateNews from './updateNews';
 import currentBitcoin from './currentBitcoin';
 import currentLiteCoin from './currentLiteCoin';
 import currentRipple from './currentRipple';
 import currentEthereum from './currentEthereum';
+import TOKEN from '../../../config';
+
 
 var getNews = () => {
   return (dispatch) => {
+    if (store.)
     axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${TOKEN}`)
     .then(({data}) => {
       dispatch(updateNews(data));
