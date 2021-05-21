@@ -5,7 +5,8 @@ import { Paper, Button } from '@material-ui/core'
 let NewsCarousel = ({allNews}) => {
 
     return (
-        <Carousel>
+        <Carousel indicators={false}>
+
             {
                 allNews?.map((news, i) => <Item key={i} news={news} /> )
             }

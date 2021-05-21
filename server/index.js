@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 let app = express();
 var router = require('./routes.js');
-
+const dotenv = require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
@@ -13,5 +13,5 @@ var PORT = 3000;
 
 
 app.listen(PORT, function() {
-  console.log(`listening on port ${PORT}`);
+  console.log(` listening on port ${PORT}`);
 });
