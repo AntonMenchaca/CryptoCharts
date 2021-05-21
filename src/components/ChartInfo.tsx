@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ChartDataContainer from '../containers/ChartDataContainer';
 import { Button } from '@material-ui/core';
-import NewsCarouselContainer from '../containers/NewsCarousel';
+import NewsCarouselContainer from '../containers/NewsCarouselContainer';
 
 interface PriceRange {
   name: string;
@@ -14,9 +14,7 @@ interface Graph {
    currentData: any,
    allNews: []
 }
-// : Graph
-// evt: React.ChangeEvent<HTMLInputElement>
-// } : React.ChangeEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>
+
 
 let ChartInfo: React.FC<Graph> = ({updateGraph, currentData, allNews}) => {
 const [state, setState] = useState({
@@ -50,7 +48,7 @@ const [state, setState] = useState({
           type="text"
           name="coinName"
           value={state.coinName}
-          onChange={handleSubmit}
+          onChange={handleChange}
           placeholder="Bitcoin"
           required={true}
         />
@@ -85,7 +83,7 @@ const [state, setState] = useState({
     </div>
     </div>
     <div id="coinNews">
-      <NewsCarouselContainer />
+      <NewsCarouselContainer allNews={allNews}/>
     </div>
     </div>
   )

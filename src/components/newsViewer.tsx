@@ -4,16 +4,7 @@ import Item from './ItemNews'
 import ItemNews from '../type/ItemNews';
 
 
-// type individualNews = {
-//     key: number;
-//     allNews: ItemNews;
-// }
 type newsArr = any[] | undefined;
-
-// interface news {
-//     allNews: individualNews[]
-// }
-// : React.FC<news> : number
 
 let NewsCarousel = ({allNews}: {allNews: newsArr}) => {
 

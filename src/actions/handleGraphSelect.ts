@@ -1,21 +1,16 @@
 import axios from 'axios';
 import getData from './Chart/getData';
 import changeCoin from './Chart/changeCoin';
-import store, {RootState} from '../store/store';
-import getNews from './Info/getNews';
-import { Dispatch, AnyAction } from 'redux';
-import {ThunkAction} from 'redux-thunk'
-
+import {Dispatch} from 'redux';
 
 interface QueryObj {
-name: string;
-from: string;
-to: string;
+    name: string;
+    from: string;
+    to: string;
 }
-var handleGraphSelect = (query: QueryObj): ThunkAction<void, RootState, unknown, AnyAction> => {
+var handleGraphSelect = (query: QueryObj)  => {
 
-  return async (dispatch) => {
-    var isNewsLoaded = store.getState().news;
+  return async (dispatch: Dispatch) => {
     try {
       const { data } = await axios.get(`/coinData`, {
         params: {
@@ -24,9 +19,6 @@ var handleGraphSelect = (query: QueryObj): ThunkAction<void, RootState, unknown,
           to: query.to
         }
       });
-      if (isNewsLoaded.length === 0) {
-        dispatch(getNews());
-      }
       dispatch(getData(data));
       dispatch(changeCoin(query.name));
       return data;
