@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-node_modules
 .env
 config.js
 dist/bundle.js
-dist/bundle.js
-=======
 .cache/
 coverage/
 dist/*
@@ -20,4 +16,3 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
->>>>>>> create type files

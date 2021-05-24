@@ -1,20 +1,12 @@
 import axios from 'axios';
-<<<<<<< HEAD
-=======
-import TOKEN from '../../../config.js';
->>>>>>> complete typescript implementation
 import updateNews from './updateNews';
 import currentBitcoin from './currentBitcoin';
 import currentLiteCoin from './currentLiteCoin';
 import currentRipple from './currentRipple';
 import currentEthereum from './currentEthereum';
 import TOKEN from '../../../config';
-
-
-var getNews = () => {
-  return (dispatch) => {
-
 import {Dispatch} from 'redux';
+
 
 var getNews = () => {
   return async (dispatch: Dispatch) => {

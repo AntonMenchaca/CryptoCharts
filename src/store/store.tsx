@@ -1,15 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-<<<<<<< HEAD
 import {persistStore, persistReducer} from 'redux-persist';
 import rootReducer from '../reducers/rootReducer.js';
 import storage from 'redux-persist/lib/storage';
-var initialState = {
-import currentBitcoin from '../actions/Info/currentBitcoin.js';
-=======
-import rootReducer from '../reducers/rootReducer';
 
->>>>>>> make all files typescript/ no errors
 
 type NumbersArr = number[];
 
