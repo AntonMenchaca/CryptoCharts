@@ -11,11 +11,11 @@ interface CoinProps {
 const Chart: React.ComponentType<CoinProps> = function({coinName, currentData})  {
 
 
-  var pricePerDay = currentData.price.map((data: number[]) => {
+  var pricePerDay = currentData.price.map((data) => {
     return data[1]
   })
 
-  var day = currentData.price.map((data: number[]) => {
+  var day = currentData.price.map((data) => {
     return data[0]
   })
 

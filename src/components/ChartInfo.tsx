@@ -79,7 +79,7 @@ const [state, setState] = useState({
     </form>
 
     <div>
-      {currentData ? <ChartDataContainer /> : <h1>none</h1>}
+      <ChartDataContainer />
     </div>
     </div>
     <div id="coinNews">

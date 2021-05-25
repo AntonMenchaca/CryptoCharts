@@ -24,7 +24,6 @@ var getNews = () => {
         dispatch(currentLiteCoin(data.litecoin))
         dispatch(currentRipple(data.ripple))
       })
-
     }
     catch (err) {
       console.log(err);

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .env
 config.js
 dist/bundle.js
+=======
+>>>>>>> 00cd258bd09caed17a91f69585220124199e86c1
 .cache/
 coverage/
 dist/*
@@ -15,4 +18,8 @@ node_modules/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+<<<<<<< HEAD
 Thumbs.db
+=======
+Thumbs.db
+>>>>>>> 00cd258bd09caed17a91f69585220124199e86c1
