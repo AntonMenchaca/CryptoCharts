@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import ChartData from '../components/ChartData';
-import {State} from '../store/store';
+import {State} from '../type/State';
 
 var mapStoreToProps = (state: State) => ({
   currentData: state.currentData
 });
 
-var ChartDataContainer = connect(mapStoreToProps, null)(ChartData);
+var ChartDataContainer = connect(mapStoreToProps)(ChartData);
 
 export default ChartDataContainer;

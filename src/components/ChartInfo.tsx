@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ChartDataContainer from '../containers/ChartDataContainer';
 import { Button } from '@material-ui/core';
 import NewsCarouselContainer from '../containers/NewsCarouselContainer';
+import { arrayOfNumArrays } from '../type/State';
 
 interface PriceRange {
   name: string;
@@ -11,12 +12,11 @@ interface PriceRange {
 
 interface Graph {
    updateGraph: (priceObj: PriceRange) => void
-   currentData: any,
-   allNews: []
+   currentData: arrayOfNumArrays
 }
 
 
-let ChartInfo: React.FC<Graph> = ({updateGraph, currentData, allNews}) => {
+let ChartInfo: React.ComponentType<Graph> = function ({updateGraph, currentData}) {
 const [state, setState] = useState({
   coinName: "",
   from: "",
@@ -79,11 +79,11 @@ const [state, setState] = useState({
     </form>
 
     <div>
-      {currentData ? <ChartDataContainer currentData={currentData}/> : <h1>none</h1>}
+      {currentData ? <ChartDataContainer /> : <h1>none</h1>}
     </div>
     </div>
     <div id="coinNews">
-      <NewsCarouselContainer allNews={allNews}/>
+      <NewsCarouselContainer />
     </div>
     </div>
   )

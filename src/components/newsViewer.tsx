@@ -10,7 +10,6 @@ let NewsCarousel = ({allNews}: {allNews: newsArr}) => {
 
     return (
         <Carousel indicators={false}>
-
             {
                 allNews?.map((news, i) => <Item key={i} allNews={news} /> )
             }

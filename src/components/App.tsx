@@ -4,9 +4,8 @@ import ChartInfoContainer from '../containers/ChartInfoContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 import Footer from './Footer';
 
-class App extends Component {
-  render() {
-    return (
+const App: React.FC = () =>
+   (
       <div id="view">
         <HeaderContainer />
         <div id='chart'><ChartContainer /></div>
@@ -14,7 +13,5 @@ class App extends Component {
       <Footer />
       </div>
     )
-  }
-}
 
 export default App;

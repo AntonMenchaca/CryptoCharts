@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Chart from '../components/Chart';
 import changeGraph from '../actions/Chart/changeGraph';
-import {State} from '../store/store';
+import {State} from '../type/State';
 import {Dispatch} from 'redux';
 import GraphDate from '../type/graph';
 

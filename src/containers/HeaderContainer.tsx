@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import {State} from '../store/store';
+import {State} from '../type/State';
 
 var mapStoreToProps = (state: State) => ({
   ethPrice: state.currentEthPrice,

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const coinAPI = require('./helper/apiCoin');
 const apiControllers = require('./helper/controllers');
 var moment = require('moment');
-
+const axios = require('axios');
 
 var func = () => {
   coinAPI.coins.fetchMarketChart('bitcoin', {days: 30, interval: 'daily'}).then(({data}) => {
@@ -18,6 +18,12 @@ router.get('/bigcoin', (req, res) => {
   }).catch((err) => {console.log(err)})
 })
 
+router.get('/news', (req, res) => {
+    return axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${process.env.TOKEN}`)
+    .then(({data}) =>
+    res.send(data))
+    .catch((err) => console.log(err))
+})
 
 router.get('/coinData', (req, res) => {
   return apiControllers.getCoinData({name: req.query.name, from: req.query.from, to: req.query.to}).then(({data}) => {
