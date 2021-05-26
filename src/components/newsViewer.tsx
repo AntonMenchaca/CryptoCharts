@@ -19,5 +19,3 @@ let NewsCarousel = ({allNews}: {allNews: newsArr}) => {
 
 
 export default NewsCarousel;
-
-//what are you going to do when opening a new codebase
