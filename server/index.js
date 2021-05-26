@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(express.static(__dirname + '/../dist'));
 app.use('/', router);
 
-var PORT = 3000;
+
 
 
 app.listen(PORT, function() {
-  console.log(` listening on port ${PORT}`);
+  console.log(` listening on port ${process.env.PORT}`);
 });
