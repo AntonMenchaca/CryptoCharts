@@ -3,7 +3,7 @@ config.js
 dist/bundle.js
 .cache/
 coverage/
-dist/*
+dist/bundle*
 !dist/index.html
 node_modules/
 *.log
