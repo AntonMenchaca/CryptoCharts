@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import {persistStore, persistReducer} from 'redux-persist';
-import rootReducer from '../reducers/rootReducer';
+import rootReducer from '../reducers/rootreducer';
 import storage from 'redux-persist/lib/storage';
 import {State} from '../type/State';
 
