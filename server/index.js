@@ -3,7 +3,7 @@ const cors = require('cors');
 let app = express();
 var router = require('./routes.js');
 const dotenv = require('dotenv').config();
-let PORT = process.env.Port || 3000;
+let PORT = process.env.Port;
 
 app.use(cors());
 app.use(express.json());
@@ -13,6 +13,6 @@ app.use('/', router);
 
 
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT, function() {
   console.log(` listening on port 3000`);
 });
