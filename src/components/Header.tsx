@@ -1,32 +1,49 @@
-import React from 'react';
-
-interface props {
+import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom'
+interface CoinProps {
   ethPrice:{
     usd: number;
     usd_24h_change: number;
-  }
-  bitcoinPrice:{
+  };
+  bitcoinPrice: {
     usd: number;
     usd_24h_change: number;
-  }
+  };
   litecoinPrice:{
     usd: number;
     usd_24h_change: number;
-  }
-  ripplePrice:{
+  };
+  ripplePrice: {
     usd: number;
     usd_24h_change: number;
-  }
+  };
+  viewNews: Boolean;
+  changePage: (pageChange: boolean) =>
+  { type: string; payload: boolean; }
 }
 
 
-var Header: React.FC<props | undefined> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice}) => {
 
+var Header: React.FC<CoinProps> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice, viewNews, changePage}, ) => {
+  useEffect(() => {
+    if (window.location.pathname === '/' && viewNews === true) {
+      changePage(!viewNews)
+    } else if(window.location.pathname === '/allNews' && viewNews === false) {
+      changePage(!viewNews)
+    }
+  }, [window.location.pathname])
   return (
     <div id="header">
     <div className= 'logo-header'>
     <img src="../../../images/logo.png"></img>
-     <h1>CryptoCharts</h1></div>
+    <div className='viewNews' >
+    <h1>CryptoCharts</h1>
+    </div>
+     </div>
+
+     <div  className="route-page" >{viewNews ? <Link to='/'> <h2 onClick={()=> changePage(!viewNews)}>View Chart</h2></Link> : <Link  to='/allNews'><h2 onClick={()=> changePage(!viewNews)}>View News</h2></Link>}</div>
+
+
 
      {ethPrice ? <div className="prices-header">
      <div id="BTC">
@@ -48,7 +65,7 @@ var Header: React.FC<props | undefined> = ({ethPrice, bitcoinPrice, litecoinPric
      <h3>${ripplePrice?.usd }</h3>
      <h3>{ripplePrice?.usd_24h_change?.toFixed(4) }%</h3>
      </div>
-     </div> : <div>hi</div>}
+     </div> : <div>Loading...</div>}
 
 
     </div>

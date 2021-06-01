@@ -3,6 +3,7 @@ const coinAPI = require('./helper/apiCoin');
 const apiControllers = require('./helper/controllers');
 var moment = require('moment');
 const axios = require('axios');
+const path = require("path");
 
 var func = () => {
   coinAPI.coins.fetchMarketChart('bitcoin', {days: 30, interval: 'daily'}).then(({data}) => {
@@ -11,6 +12,9 @@ var func = () => {
     console.log(err);
   })
 }
+router.get('/allNews', (req, res) =>{
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
+})
 
 router.get('/bigcoin', (req, res) => {
   return apiControllers.getBigCoinData().then(({data}) => {

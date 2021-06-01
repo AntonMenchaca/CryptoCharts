@@ -5,6 +5,7 @@ import rootReducer from '../reducers/rootreducer';
 import storage from 'redux-persist/lib/storage';
 import {State} from '../type/State';
 
+
 var initialState: State = {
   currentCoin: 'Bitcoin',
   currentData: {
@@ -18,10 +19,23 @@ var initialState: State = {
     market_caps: [],
   },
   news: [],
-  currentBitcoinPrice: {},
-  currentEthPrice: {},
-  currentLiteCoinPrice: {},
-  currentRipplePrice: {},
+  currentBitcoinPrice: {
+    usd: 0,
+    usd_24h_change: 0,
+  },
+  currentEthPrice: {
+    usd: 0,
+    usd_24h_change: 0,
+  },
+  currentLiteCoinPrice: {
+    usd: 0,
+    usd_24h_change: 0,
+  },
+  currentRipplePrice: {
+    usd: 0,
+    usd_24h_change: 0,
+  },
+  showNews: false
 };
 
 const persistConfig = {
@@ -37,4 +51,3 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
   export const store = createStore(persistedReducer, initialState,
     applyMiddleware(thunk));
 export const persistor = persistStore(store);
-// export type RootState = ReturnType<typeof store.getState>

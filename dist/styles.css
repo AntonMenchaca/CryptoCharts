@@ -36,9 +36,35 @@ even lighter blue: #62B1D0
   grid-area: header;
   color: rgb(133, 231, 133);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+#header div {
+  margin-right: 1rem;
+}
 
+.route-page {
+  align-self: flex-end;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+.route-page h2 {
+  margin-right: 1rem;
+}
+
+.route-page:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+#pages {
+  display: flex;
+  flex-direction: row;
+}
+#pages h2 {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 20px;
 }
 
 #chart {
@@ -48,7 +74,25 @@ even lighter blue: #62B1D0
   min-width: 700px;
   grid-area: c;
 }
+.news-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  color: black;
+  background-color: #0776A0;
+  padding: 4rem 0;
+}
+.news-list div{
+  width: 80%;
 
+}
+.newsImageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 #chartInfo {
   background-color: #62B1D0;
   width: 50vw;
@@ -80,13 +124,11 @@ even lighter blue: #62B1D0
   width: 200px;
   height: 200px;
 }
+
 .prices-header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.prices-header div {
-  margin-right: 1rem;
 }
 
 .logo {
@@ -170,12 +212,18 @@ form input {
 .newsContainer {
   display: flex;
   justify-content: center;
-  padding-left: 1rem;
   overflow: scroll;
   flex-direction: column;
   height: 100%;
+  color: white;
   align-items: center;
+  border: 1px black solid;
+  background-color: #024C68;
+  margin: auto;
+  padding: 2rem;
+  margin-bottom: 1rem;
 }
+
 
 .newsImage {
   object-fit: contain;
@@ -190,10 +238,15 @@ form input {
   }
   #header {
     font-size: .8rem;
-    width: 100vw;
+    width: 100%;
     grid-area: header;
 
   }
+
+  .prices-header {
+    display: none;
+  }
+
   #view {
     display: grid;
     position: relative;
@@ -210,13 +263,13 @@ form input {
 
   }
   #chart {
-    width: 100vw;
+    width: 100%;
     height: 70vh;
   }
 
   #chartInfo {
     background-color: #62B1D0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     grid-area: ci;
   }

@@ -6,6 +6,7 @@ import currentBitcoinReducer from './regularReducers/currentBitcoinReducer';
 import currentLiteCoinReducer from './regularReducers/currentLiteCoinReducer';
 import currentEthereumReducer from './regularReducers/currentEthereumReducer';
 import currentRippleReducer from './regularReducers/currentRippleReducer';
+import currentPageReducer from './regularReducers/currentPageReducer';
 
 var rootReducer = combineReducers({
   currentData: getDataReducer,
@@ -14,7 +15,8 @@ var rootReducer = combineReducers({
   currentRipplePrice: currentRippleReducer,
   currentBitcoinPrice: currentBitcoinReducer,
   currentLiteCoinPrice: currentLiteCoinReducer,
-  currentEthPrice: currentEthereumReducer
+  currentEthPrice: currentEthereumReducer,
+  showNews: currentPageReducer
 });
 
 export default rootReducer;

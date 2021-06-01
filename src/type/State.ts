@@ -18,8 +18,21 @@ export interface State  {
   currentCoin: string;
   currentData: arrayOfNumArrays;
   news: [];
-  currentBitcoinPrice: Object;
-  currentEthPrice: Object;
-  currentLiteCoinPrice: Object;
-  currentRipplePrice: Object;
+  currentBitcoinPrice: {
+    usd: number;
+    usd_24h_change: number;
+  };
+  currentEthPrice: {
+    usd: number;
+    usd_24h_change: number;
+  };
+  currentLiteCoinPrice:{
+    usd: number;
+    usd_24h_change: number;
+  };
+  currentRipplePrice: {
+    usd: number;
+    usd_24h_change: number;
+  };
+  showNews: boolean;
 }

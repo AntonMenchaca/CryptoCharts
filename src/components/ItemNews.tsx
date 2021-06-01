@@ -6,7 +6,7 @@ import ItemNews from '../type/ItemNews';
 let Item:React.FC<ItemNews> = ({allNews}) =>
 {
     return (
-        <Paper>
+
         <div className="newsContainer">
         <h2>{allNews.title}</h2>
             <div className="newsImageContainer">
@@ -17,7 +17,7 @@ let Item:React.FC<ItemNews> = ({allNews}) =>
             <p>{allNews.text}</p>
         </div>
 
-        </Paper>
+
     )
 }
 
