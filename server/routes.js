@@ -5,13 +5,6 @@ var moment = require('moment');
 const axios = require('axios');
 const path = require("path");
 
-var func = () => {
-  coinAPI.coins.fetchMarketChart('bitcoin', {days: 30, interval: 'daily'}).then(({data}) => {
-    console.log(data.prices)
-  }).catch((err) => {
-    console.log(err);
-  })
-}
 router.get('/allNews', (req, res) =>{
   res.sendFile(path.join(__dirname, "../dist/index.html"));
 })

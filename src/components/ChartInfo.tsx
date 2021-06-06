@@ -30,7 +30,6 @@ const [state, setState] = useState({
       ...state,
       [evt.target.name]: value
     });
-    console.log(state.from)
   }
 
   function handleSubmit(evt: React.ChangeEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>) {

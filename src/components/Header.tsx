@@ -35,7 +35,7 @@ var Header: React.FC<CoinProps> = ({ethPrice, bitcoinPrice, litecoinPrice, rippl
   return (
     <div id="header">
     <div className= 'logo-header'>
-    <img src="../../../images/logo.png"></img>
+    <img src="../../../images/logo.png" alt="bitcoin logo with rising green arrow"></img>
     <div className='viewNews' >
     <h1>CryptoCharts</h1>
     </div>

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Paper } from '@material-ui/core';
 import ItemNews from '../type/ItemNews';
 
 let Item:React.FC<ItemNews> = ({allNews}) =>
@@ -10,7 +9,7 @@ let Item:React.FC<ItemNews> = ({allNews}) =>
         <div className="newsContainer">
         <h2>{allNews.title}</h2>
             <div className="newsImageContainer">
-            <a className="newsImage" href={allNews.news_url}> <img src={allNews.image_url}></img>
+            <a className="newsImage" href={allNews.news_url}> <img src={allNews.image_url} alt={`a picture invoking the feeling of ${allNews.title}`} height="360" width="640"></img>
             </a>
             </div>
 
