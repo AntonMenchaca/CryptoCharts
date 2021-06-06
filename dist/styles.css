@@ -51,6 +51,10 @@ even lighter blue: #62B1D0
 }
 .route-page h2 {
   margin-right: 1rem;
+  color: #000b0f;
+}
+.route-page a{
+  text-decoration: none;
 }
 
 .route-page:hover {
@@ -165,7 +169,7 @@ even lighter blue: #62B1D0
   align-items: center;
 }
 #currentPriceInfo {
-  background-color: #62B1D0;
+  background-color: #000b0f;
   border: 1px solid whitesmoke;
   padding: 1rem;
 }

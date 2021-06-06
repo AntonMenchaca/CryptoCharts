@@ -18,7 +18,6 @@ var getNews = () => {
         console.log(err);
       })
       await axios.get('/bigCoin').then(({data}) => {
-        console.log(store.getState());
         dispatch(currentBitcoin(data.bitcoin))
         dispatch(currentEthereum(data.ethereum))
         dispatch(currentLiteCoin(data.litecoin))
