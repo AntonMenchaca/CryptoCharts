@@ -1,12 +1,18 @@
-FROM node:15.12.0-alpine3.10
+FROM node:15.12.0-alpine3.10 as builder
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install
+WORKDIR /app
 
 COPY . .
 
-EXPOSE 3000
+RUN npm ci && npm run build
+
+# From builder stage
+
+FROM node:15.12.0-alpine3.10
+
+USER node
+
+COPY --from=builder --chown=node:node /app .
+
+
 CMD [ "node", "server" ]
