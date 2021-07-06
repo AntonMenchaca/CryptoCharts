@@ -4,6 +4,45 @@ const apiControllers = require('./helper/controllers');
 var moment = require('moment');
 const axios = require('axios');
 const path = require("path");
+const redis = require("redis");
+const client = redis.createClient(process.env.REDIS_PORT);
+
+client.on("error", function(error) {
+  console.error(error);
+});
+client.on("ready", function() {
+  console.log('redis connected')
+})
+
+
+function cacheNews(req, res, next) {
+  client.get('news', (err, data) => {
+    if (err) {
+      console.log(err)
+    }
+    if (data !== null) {
+      console.log('loading from redis')
+      res.send(JSON.parse(data))
+    } else {
+      next()
+    }
+  })
+}
+
+async function getNews(req, res, next) {
+  try {
+    data = await axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${process.env.TOKEN}`)
+    console.log(data.data);
+    client.setex('news', 3600, JSON.stringify(data.data))
+
+    res.send(data)
+  }
+  catch (err) {
+    console.log(err)
+    res.sendStatus(500)
+  }
+}
+
 
 router.get('/allNews', (req, res) =>{
   res.sendFile(path.join(__dirname, "../dist/index.html"));
@@ -15,12 +54,9 @@ router.get('/bigcoin', (req, res) => {
   }).catch((err) => {console.log(err)})
 })
 
-router.get('/news', (req, res) => {
-    return axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${process.env.TOKEN}`)
-    .then(({data}) =>
-    res.send(data))
-    .catch((err) => console.log(err))
-})
+
+
+router.get('/news', cacheNews, getNews)
 
 router.get('/coinData', (req, res) => {
   return apiControllers.getCoinData({name: req.query.name, from: req.query.from, to: req.query.to}).then(({data}) => {
