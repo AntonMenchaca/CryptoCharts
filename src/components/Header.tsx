@@ -40,7 +40,6 @@ var Header: React.FC<CoinProps> = ({ethPrice, bitcoinPrice, litecoinPrice, rippl
     <h1>CryptoCharts</h1>
     </div>
      </div>
-
      <div  className="route-page" >{viewNews ? <Link to='/'> <h2 onClick={()=> changePage(!viewNews)}>View Chart</h2></Link> : <Link  to='/allNews'><h2 onClick={()=> changePage(!viewNews)}>View News</h2></Link>}</div>
 
 

@@ -205,7 +205,6 @@ form input {
   padding: 1rem;
   margin: 1rem;
   border: 1px solid whitesmoke;
-  overflow: scroll;
 }
 
 #innerChart {

@@ -32,7 +32,6 @@ function cacheNews(req, res, next) {
 async function getNews(req, res, next) {
   try {
     data = await axios.get(`https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=${process.env.TOKEN}`)
-    console.log(data.data);
     client.setex('news', 3600, JSON.stringify(data.data))
 
     res.send(data)

@@ -23,8 +23,6 @@ const App: React.FC = () =>
         </Route>
         <Footer />
       </div>
-
-
     </Router>
 
   )
