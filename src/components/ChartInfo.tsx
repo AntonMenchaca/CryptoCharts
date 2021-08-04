@@ -2,21 +2,11 @@ import React, {useState} from 'react';
 import ChartDataContainer from '../containers/ChartDataContainer';
 import { Button } from '@material-ui/core';
 import NewsCarouselContainer from '../containers/NewsCarouselContainer';
-import { arrayOfNumArrays } from '../type/State';
-
-interface PriceRange {
-  name: string;
-  to: string;
-  from: string;
-}
-
-interface Graph {
-   updateGraph: (priceObj: PriceRange) => void
-   currentData: arrayOfNumArrays
-}
+import { Graph } from '../type/State';
 
 
-let ChartInfo: React.ComponentType<Graph> = function ({updateGraph, currentData}) {
+
+let ChartInfo: React.ComponentType<Graph> = function ({updateGraph}) {
 const [state, setState] = useState({
   coinName: "",
   from: "",

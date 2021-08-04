@@ -4,12 +4,10 @@ import App from './components/App';
 import {Provider} from 'react-redux';
 import {store, persistor} from './store/store';
 import handleGraphSelect from './actions/handleGraphSelect';
-import moment from 'moment'
+import moment from 'moment';
 import { PersistGate } from 'redux-persist/integration/react';
 import getNews from './actions/Info/getNews'
-import {
-    BrowserRouter as Router,
-  } from "react-router-dom";
+
 
 
 ReactDOM.render(

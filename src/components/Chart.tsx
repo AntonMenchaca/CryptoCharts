@@ -1,14 +1,10 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import {arrayOfNumArrays} from '../type/State'
+import {CurrentCoinProps} from '../type/State'
 
 
-interface CoinProps {
-  coinName: string;
-  currentData: arrayOfNumArrays;
-}
 
-const Chart: React.ComponentType<CoinProps> = function({coinName, currentData})  {
+const Chart: React.ComponentType<CurrentCoinProps> = function({coinName, currentData})  {
 
 
   var pricePerDay = currentData.price.map((data) => {

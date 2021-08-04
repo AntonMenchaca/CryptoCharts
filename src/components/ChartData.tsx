@@ -1,9 +1,6 @@
 import React from 'react';
-import {arrayOfNumArrays} from '../type/State'
+import {CoinData} from '../type/State'
 
-interface CoinData {
-  currentData: arrayOfNumArrays
-}
 
 let ChartData: React.FC<CoinData> = ({currentData})  => {
 

@@ -1,12 +1,25 @@
-{"presets": [
-  [
-    "@babel/env",
-  {"modules": false}
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/preset-react"
   ],
-  "@babel/preset-react"
-],
-
-"plugins": [
-  "react-hot-loader/babel"
-]
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
 }

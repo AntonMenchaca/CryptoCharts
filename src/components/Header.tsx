@@ -1,27 +1,6 @@
 import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom'
-interface CoinProps {
-  ethPrice:{
-    usd: number;
-    usd_24h_change: number;
-  };
-  bitcoinPrice: {
-    usd: number;
-    usd_24h_change: number;
-  };
-  litecoinPrice:{
-    usd: number;
-    usd_24h_change: number;
-  };
-  ripplePrice: {
-    usd: number;
-    usd_24h_change: number;
-  };
-  viewNews: Boolean;
-  changePage: (pageChange: boolean) =>
-  { type: string; payload: boolean; }
-}
-
+import {CoinProps} from '../type/State'
 
 
 var Header: React.FC<CoinProps> = ({ethPrice, bitcoinPrice, litecoinPrice, ripplePrice, viewNews, changePage}, ) => {
