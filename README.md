@@ -1,6 +1,6 @@
 # CryptoCharts
 
-A 2 day sprint passion project. The MVP goals of this application was to create a visual analysis of previous Crptocurrency prices and provide current cryptocurrency news to the user.
+The MVP goals of this application was to create a visual analysis of previous Crptocurrency prices and provide current cryptocurrency news to the user.
 
 ![](READMEGIF/cryptoCharts.gif)
 
