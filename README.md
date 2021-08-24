@@ -2,6 +2,8 @@
 
 The MVP goals of this application was to create a visual analysis of previous Crptocurrency prices and provide current cryptocurrency news to the user.
 
+<img width="1003" alt="CryptoChartStats" src="https://user-images.githubusercontent.com/64051221/130540536-0ab5135f-9011-4b37-bbc6-79adeec19d1a.png">
+
 ![](READMEGIF/cryptoCharts.gif)
 
 
@@ -11,6 +13,7 @@ The MVP goals of this application was to create a visual analysis of previous Cr
 [Technologies Used](#technologies-used)
 
 ---
+
 
 
 ## Running the Server
@@ -25,6 +28,7 @@ The MVP goals of this application was to create a visual analysis of previous Cr
 > Back end
 - [Node.js](https://nodejs.org/en/)
 - [Express](http://expressjs.com/)
+- [Redis](https://redis.io/)
 
 > Front End
 - [React](https://reactjs.org/)
