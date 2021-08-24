@@ -2,8 +2,6 @@
 
 The MVP goals of this application was to create a visual analysis of previous Crptocurrency prices and provide current cryptocurrency news to the user.
 
-<img width="1003" alt="CryptoChartStats" src="https://user-images.githubusercontent.com/64051221/130540536-0ab5135f-9011-4b37-bbc6-79adeec19d1a.png">
-
 ![](READMEGIF/cryptoCharts.gif)
 
 
@@ -23,6 +21,7 @@ The MVP goals of this application was to create a visual analysis of previous Cr
   - To build our bundle in dev mode run command: "npm run build"
   - To start our node server run command: "npm start"
 ---
+<img width="1003" alt="CryptoChartStats" src="https://user-images.githubusercontent.com/64051221/130540536-0ab5135f-9011-4b37-bbc6-79adeec19d1a.png">
 
 ## Technologies Used
 > Back end
