@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watch",
     "start": "node server",
-    "build": "webpack --mode production",
+    "build": "webpack --mode development --watch",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
   },
   "repository": {

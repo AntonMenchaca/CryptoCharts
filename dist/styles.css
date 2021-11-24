@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 h1 {
   font-size: 3rem;
@@ -14,7 +14,6 @@ lighter blue: #0776A0
 even lighter blue: #62B1D0
 */
 
-
 #view {
   display: grid;
   position: relative;
@@ -25,16 +24,15 @@ even lighter blue: #62B1D0
   column-gap: 3px;
   row-gap: 3px;
   grid-template-areas:
-  "header header"
-  "c ci"
-  "footer footer"
-
+    "header header"
+    "c ci"
+    "footer footer";
 }
 #header {
-  background-color: #0776A0;
+  background-color: #1d1d1d;
   height: 15vh;
   grid-area: header;
-  color: rgb(133, 231, 133);
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,9 +49,9 @@ even lighter blue: #62B1D0
 }
 .route-page h2 {
   margin-right: 1rem;
-  color: #000b0f;
+  color: #ffffff;
 }
-.route-page a{
+.route-page a {
   text-decoration: none;
 }
 
@@ -72,7 +70,7 @@ even lighter blue: #62B1D0
 }
 
 #chart {
-  background-color: #024C68;
+  background-color: #f3f3f3;
   width: 50vw;
   height: 90vh;
   min-width: 700px;
@@ -84,13 +82,12 @@ even lighter blue: #62B1D0
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  color: black;
-  background-color: #0776A0;
+  color: #1d1d1d;
+  background-color: white;
   padding: 4rem 0;
 }
-.news-list div{
+.news-list div {
   width: 80%;
-
 }
 .newsImageContainer {
   display: flex;
@@ -99,16 +96,15 @@ even lighter blue: #62B1D0
   width: 100%;
 }
 .newsImageContainer img {
-  height: 80%
+  height: 80%;
 }
 
 #chartInfo {
-  background-color: #62B1D0;
+  background-color: white;
   width: 50vw;
   height: 90vh;
   grid-area: ci;
 }
-
 
 #footer {
   height: 5vh;
@@ -154,15 +150,13 @@ even lighter blue: #62B1D0
   object-fit: contain;
 }
 
-
-
 #gitURL {
   text-decoration: none;
-  color: black;
+  color: #1d1d1d;
 }
 
 #coinData {
-  background-color: #024C68;
+  background-color: #ffffff;
   height: 30%;
   padding: 1rem;
   margin: 1rem;
@@ -174,7 +168,7 @@ even lighter blue: #62B1D0
   align-items: center;
 }
 #currentPriceInfo {
-  background-color: #000b0f;
+  background-color: #1d1d1d;
   border: 1px solid whitesmoke;
   padding: 1rem;
 }
@@ -199,21 +193,22 @@ form input {
   font-size: 1rem;
 }
 
-  button {
+button {
   width: 70px;
 }
 
-
 #coinNews {
-  background-color: #024C68;
+  background-color: #1d1d1d;
   padding: 1rem;
   margin: 1rem;
   height: 55vh;
+  color: #f3f3f3;
   border: 1px solid whitesmoke;
 }
 
 #innerChart {
-  background-color: #0776A0;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
   margin-top: 1rem;
 }
 
@@ -223,21 +218,19 @@ form input {
   flex-direction: column;
   color: white;
   align-items: center;
-  border: 1px black solid;
-  background-color: #024C68;
+  border: 1px rgb(255, 254, 254) solid;
+  background-color: #1d1d1d;
   margin: auto;
   padding: 2rem;
   margin-bottom: 1rem;
   flex: auto;
 }
 
-
 .newsImage {
   object-fit: contain;
 }
 
-
-@media (min-width: 0px) and (max-width:768px) {
+@media (min-width: 0px) and (max-width: 768px) {
   .logo-header img {
     object-fit: contain;
     width: 100px;
@@ -248,20 +241,19 @@ form input {
     width: 70vw;
   }
   #header {
-    font-size: .8rem;
+    font-size: 0.8rem;
     width: 100vw;
     grid-area: header;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
   }
-.route-page {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
+  .route-page {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
   .prices-header {
     display: none;
   }
@@ -275,11 +267,10 @@ form input {
     grid-template-rows: "1fr 1fr 1fr 1fr";
     row-gap: 3px;
     grid-template-areas:
-    "header"
-    "c"
-    "ci"
-    "footer"
-
+      "header"
+      "c"
+      "ci"
+      "footer";
   }
   #chart {
     min-width: auto;
@@ -288,7 +279,7 @@ form input {
   }
 
   #chartInfo {
-    background-color: #62B1D0;
+    background-color: #1d1d1d;
     width: 100vw;
     height: 100vh;
     grid-area: ci;
